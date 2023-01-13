@@ -1,10 +1,23 @@
 ---
-layout: default
+layout: page
 ---
 
 
-<div class="col-lg-10 mx-auto mt-5 markdown-body">
-  {{ content }}
+<h1><b>{{ page.name }}</b></h1>
+{% if page.name_cn != empty %}
+  <h3><b>{{ page.name_cn }}</b></h3>
+{% endif %}
+
+<p class="post-metadata text-muted">
+  {{ page.year }} -  
+  <b>
+  {%- assign words = content | number_of_words -%}
+  {%- if words < 360 -%}
+    less than 1 min read time
+  {%- else -%}
+    {{ words | divided_by: 180 }} mins read time
+  {%- endif -%}
+  </b>
 
   <br>
   <p class="post-metadata text-muted">
@@ -32,13 +45,21 @@ layout: default
   {% endif%}
   <br>
   
+  {% if page.location != empty and page.location_cn != empty %}
+    Location: {{ page.location_cn }} {{ page.location }}
+  {% endif%}
+  <br>
+
   {%- if page.tags != empty -%}
     Tags: 
     {% for tag in page.tags %}
     <a class="text-decoration-none no-underline" href="{{ tag | slugify | prepend:'/projects/tags#' | relative_url }}">
       <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
+
     </a>
     {% endfor %}
   {%- endif -%}
-  </p>
-</div>
+
+</p>
+
+{{ content }}
