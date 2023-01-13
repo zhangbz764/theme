@@ -14,7 +14,7 @@
 {% else %}
 <div class="py-3">
   <h4 id="{{ tag | slugify }}">{{ tag }}</h4>
-  <ol>
+  <ul>
   {% for publication in site.publications %}
     {%- if publication.tags contains tag -%}
       {%- if publication.external_url -%}
@@ -27,7 +27,7 @@
     <br/>
     {%- endif -%}
   {% endfor %}
-  </ol>
+  </ul>
 </div>
 <hr class="bg-light">
 {% endif %}
