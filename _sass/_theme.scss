@@ -9,7 +9,7 @@
 }
 
 #theme-toggler:before {
-  @include themed(content, "<i class="fa-duotone fa-moon"></i>", "<i class="fa-duotone fa-sun"></i>");
+  @include themed(content, "<span class="fa-solid fa-moon"></span>", "<span class="fa-solid fa-sun"></span>");
 }
 
 .navbar-themed {
