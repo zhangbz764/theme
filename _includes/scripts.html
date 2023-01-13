@@ -19,4 +19,11 @@
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
+
+$(window).resize(function(){
+  var height = $("text_publications/2021-04-01-archibase.md").height();
+  $('img_publications/2021-04-01-archibase.md').height(height);
+})
+
+$(window).resize(); //on page load
 </script>
