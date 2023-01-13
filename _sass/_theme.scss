@@ -9,7 +9,7 @@
 }
 
 #theme-toggler:before {
-  @include themed(content, "<span class="fa-solid fa-moon"></span>", "<span class="fa-solid fa-sun"></span>");
+  @include themed(content, "🌙", "☀️");
 }
 
 .navbar-themed {
