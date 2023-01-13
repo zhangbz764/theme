@@ -23,7 +23,7 @@
         {%- assign url = project.url | relative_url -%}
       {%- endif -%}
     <a href="{{ url }}"><li>{{ project.name }} {{project.name_cn}}</li></a>
-    <small class="text-muted"> - {{ project.year | date_to_long_string }}</small>
+    <small class="text-muted"> - {{ project.year }}</small>
     <br/>
     {%- endif -%}
   {% endfor %}
