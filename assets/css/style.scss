@@ -71,7 +71,12 @@ a.bg-primary:hover {
     overflow:hidden;
 }
 
-
+.people-card-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover; 
+    overflow:hidden;
+}
 
 .card-img-overlay{
     display: block;/* or inline-block */
