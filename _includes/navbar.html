@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-themed">
 
   <a class="navbar-brand d-lg-none" href="{{ site.baseurl }}/">
-    <h5><b>{{ site.short_title }}</b></h5>
+    <h5 ><b class="size-unchange-1">{{ site.short_title }}</b></h5>
   </a>
   <a class="navbar-brand d-none d-lg-block" href="{{ site.baseurl }}/">
-    <h5><b>{{ site.title }}</b></h5>
+    <h5 ><b class="size-unchange-1">{{ site.title }}</b></h5>
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@
           {%- assign url = html_page.url | relative_url -%}
         {%- endif -%}
 
-        <a class="nav-item nav-link {{ active_status }}" href="{{ url }}" {%- if html_page.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>{{ html_page.title }}</a>
+        <a class="nav-item nav-link size-unchange-2 {{ active_status }}" href="{{ url }}" {%- if html_page.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>{{ html_page.title }}</a>
 
       {% endfor %}
 
