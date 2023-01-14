@@ -119,4 +119,9 @@ html {font-size: 90%!important;}
     .size-unchange-3{font-size: 0.8rem!important;}
 }
 
-
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+  }
