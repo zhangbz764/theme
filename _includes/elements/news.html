@@ -1,11 +1,10 @@
-<h4 class='text-center mt-5'>Recent News</h4>
+<h4 class='text-center mt-6'>Recent News</h4>
 
----
-
-<div class="card-columns col-12 m-3">
+<div class="card-columns col-11 m-3">
     {% assign projects = site.projects | where:"navs","news" %}
     {% assign publications = site.publications | where:"navs","news" %}
 
+    <!-- Projects -->
     {% for proj in projects reversed %}
         {%- if proj.external_url -%}
             {%- assign project_url = proj.external_url -%}
@@ -19,9 +18,9 @@
         <div class="wow animated fadeIn" data-wow-delay=".15s">
             <a href="{{ project_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
                 {%- if proj.image -%}
-                <img id="{{ project_id }}-img" class="card-img-top py-0" src="{{ proj.image }}" alt="{{ proj.name }}" />
+                <img id="{{ project_id }}-img" class="card-img-top mt-0" src="{{ proj.image }}" alt="{{ proj.name }}" />
                 {%- endif -%}
-                <div class="card-body">
+                <div class="card-body p-1">
                     <h5 id="{{ project_id }}-name" class="card-title">
                         {{ proj.name }}
                     </h5>
@@ -32,7 +31,7 @@
                     </p>
                     <p id="{{ project_id }}-tags" class="card-text">
                         {%- for tag in proj.tags -%}
-                            <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
+                            <span class="badge badge-pill text-primary border border-primary ">{{ tag }}</span>
                         {%- endfor -%}
                     </p>
                 </div>
@@ -41,5 +40,10 @@
                 </div>
             </a>
         </div>
+    {% endfor %}
+
+    <!-- Publications -->
+    {% for pub in publications reversed %}
+        <!-- simple version of publication cards -->
     {% endfor %}
 </div>
