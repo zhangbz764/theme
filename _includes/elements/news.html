@@ -1,5 +1,6 @@
+<h4 class='text-center mt-5'>Recent News</h4>
 
-<div class="card-columns m-3 mt-5">
+<div class="card-columns col-12 m-3 mt-5">
     {% assign projects = site.projects | where:"navs","news" %}
     {% assign publications = site.publications | where:"navs","news" %}
 
@@ -15,27 +16,28 @@
         {%- assign project_id = proj.name -%}
         <div class="wow animated fadeIn" data-wow-delay=".15s">
             <a href="{{ project_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
-            {%- if project_img -%}
-            <img id="{{ project_id }}-img" class="card-img-top" src="{{ proj.image }}" alt="{{ proj.name }}" />
-            {%- endif -%}
-            <div class="card-body">
-                <h5 id="{{ project_id }}-name" class="card-title">
-                {{ proj.name }}
-                </h5>
-                <p id="{{ project_id }}-year" class="card-text mb-3 text-muted small">
-                {{ project_year }}
-        
-                {{% if proj.location != empty %}}
-                    {{ proj.location }}
-                {{% endif %}}
-                </p>
-                <p id="{{ project_id }}-desc" class="card-text">{{ proj.description }}</p>
-                <p id="{{ project_id }}-tags" class="card-text">
-                {%- for tag in proj.tags -%}
-                    <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
-                {%- endfor -%}
-                </p>
-            </div>
+                {%- if proj.image -%}
+                <img id="{{ project_id }}-img" class="card-img-top" src="{{ proj.image }}" alt="{{ proj.name }}" />
+                {%- endif -%}
+                <div class="card-body">
+                    <h5 id="{{ project_id }}-name" class="card-title">
+                        {{ proj.name }}
+                    </h5>
+                    <p id="{{ project_id }}-loc" class="card-text mb-3 text-muted small">
+                        {{% if proj.location != empty %}}
+                            {{ proj.location }}
+                        {{% endif %}}
+                    </p>
+                    <p id="{{ project_id }}-desc" class="card-text">{{ proj.description }}</p>
+                    <p id="{{ project_id }}-tags" class="card-text">
+                        {%- for tag in proj.tags -%}
+                            <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
+                        {%- endfor -%}
+                    </p>
+                </div>
+                <div class="card-footer text-muted small m-0">
+                    Project | {{ proj.year }}
+                </div>
             </a>
         </div>
     {% endfor %}
