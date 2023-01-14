@@ -1,6 +1,8 @@
+<br>
+<br>
 <h4 class='text-center mt-6'>Recent News</h4>
 
-<div class="card-columns col-11 m-3">
+<div class="card-columns col-11 ml-5">
     {% assign projects = site.projects | where:"navs","news" %}
     {% assign publications = site.publications | where:"navs","news" %}
 
@@ -20,7 +22,7 @@
                 {%- if proj.image -%}
                 <img id="{{ project_id }}-img" class="card-img-top mt-0" src="{{ proj.image }}" alt="{{ proj.name }}" />
                 {%- endif -%}
-                <div class="card-body p-1">
+                <div class="card-body p-3">
                     <h5 id="{{ project_id }}-name" class="card-title">
                         {{ proj.name }}
                     </h5>
@@ -35,7 +37,7 @@
                         {%- endfor -%}
                     </p>
                 </div>
-                <div class="card-footer text-muted small m-0">
+                <div class="card-footer text-muted small m-0 py-2">
                     Project | {{ proj.year }}
                 </div>
             </a>
@@ -45,5 +47,6 @@
     <!-- Publications -->
     {% for pub in publications reversed %}
         <!-- simple version of publication cards -->
+        
     {% endfor %}
 </div>
