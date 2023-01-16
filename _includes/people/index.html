@@ -1,17 +1,22 @@
 {% for pos in site.data.people-category.position %}
   {% assign peoples = site.people | where:"position", pos %}
 
+  {% if peoples != empty %}
   <h2 class="pt-3 text-center my-5">{{pos}}</h2>
   <div class="card-group mt-2">
     {% for people in peoples %}
-      {%- assign people_id    = people.name | slugify -%}
-      {%- assign people_img   = people.image -%}
-      {%- assign people_name  = people.name -%}
-      {%- assign people_tags = people.tags -%}
-      {%- assign people_url = people.url | relative_url -%}
+      {% if people.navs contains "template" %}
+      {% else %}
+        {%- assign people_id    = people.name | slugify -%}
+        {%- assign people_img   = people.image -%}
+        {%- assign people_name  = people.name -%}
+        {%- assign people_tags = people.tags -%}
+        {%- assign people_url = people.url | relative_url -%}
 
-      {% include people/people-card.html %}
+        {% include people/people-card.html %}
+      {% endif %}
     {% endfor %}
   
   </div>
+  {% endif %}
 {% endfor%}
