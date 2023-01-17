@@ -7,7 +7,12 @@ const themes = {
   DARK: "dark",
 };
 
-initTheme();
+window.matchMedia(QUERY_KEY).addEventListener("change", (e) => {
+  const newTheme = e.matches ? themes.DARK : themes.LIGHT;
+  setTheme(newTheme);
+});
+
+window.onload = initTheme;
 
 function initTheme() {
   const savedTheme = localStorage.getItem(STORAGE_KEY);
@@ -24,11 +29,8 @@ function initTheme() {
   }
 
   // Watch for system theme changes
-  window.matchMedia(QUERY_KEY).addEventListener("change", (e) => {
-    const newTheme = e.matches ? themes.DARK : themes.LIGHT;
-    setTheme(newTheme);
-  });
 }
+initTheme();
 
 function toggleTheme() {
   const theme = getTheme();
@@ -43,13 +45,19 @@ function getTheme() {
 
 function setTheme(value) {
   document.documentElement.setAttribute(THEME_ATTR, value);
+  console.log(value)
+  console.log(document.getElementById("seu-logo"))
   
   if( value === themes.LIGHT) {
-    document.getElementById("seu-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-black.jpg";
-    document.getElementById("aaa-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-black.jpg";
+    if (document.getElementById("seu-logo") !== null) {
+      document.getElementById("seu-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-black.jpg";
+      document.getElementById("aaa-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-black.jpg";
+    }
   }
   else {
-    document.getElementById("seu-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-white.jpg";
-    document.getElementById("aaa-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-white.jpg";
+    if (document.getElementById("seu-logo") !== null) {
+      document.getElementById("seu-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-white.jpg";
+      document.getElementById("aaa-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-white.jpg";
+    }
   }
 }
