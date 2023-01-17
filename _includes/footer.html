@@ -1,41 +1,34 @@
-<footer class="row container mx-auto py-3">
+<footer class="row container mx-auto py-3 mt-3">
 
-  <img id="seu-logo" class="col-6 col-md-4 col-lg-3 my-2" style="object-fit: contain;" 
-      src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-black.jpg"
-      ></img>
-  <img id="aaa-logo" class="col-6 col-md-4 col-lg-3 my-2" style="object-fit: contain;" 
-      src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-black.jpg"
-      ></img>
+  <img id="seu-logo" class="col-6 col-md-4 col-lg-3 my-2" style="object-fit: contain;"
+    src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-black.jpg"></img>
+  <img id="aaa-logo" class="col-6 col-md-4 col-lg-3 my-2" style="object-fit: contain;"
+    src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-black.jpg"></img>
   <div class="col-md-4 col-lg-6 text-center text-md-right">
 
-      <small class="text-muted mb-2 size-unchange-3 mx-1">
-          2022 - {{ 'now' | date: "%Y" }} ©
-          <strong>{{ site.author.name }}</strong>
-          <!-- | Jekyll <a href="https://github.com/archialgo/theme" class="text-muted ">portfolYOU</a> -->
-      </small>
+    <small class="text-muted mb-2 size-unchange-3 mx-1">
+      2022 - {{ 'now' | date: "%Y" }} ©
+      <strong>{{ site.author.name }}</strong>
+      <!-- | Jekyll <a href="https://github.com/archialgo/theme" class="text-muted ">portfolYOU</a> -->
+    </small>
 
-      <div>
+    <div>
 
-          {%- assign unfocused_color = "6c757d" -%}
-        
-          {% for account in site.author %}
-        
-            {%- assign service_name = account[0] -%}
-            {%- assign service_data = site.data.social-media[service_name] -%}
-            {%- if service_data -%}    
-            <a class="social mx-1 size-unchange-2"  href="{{ service_data.url }}{{ account[1] }}"
-               style="color: #{{ unfocused_color }}"
-               onMouseOver="this.style.color='#{{ service_data.color }}'"
-               onMouseOut="this.style.color='#{{ unfocused_color }}'">
-              <i class="{{ service_data.icon }} fa-1x"></i>
-            </a>
-            {%- endif -%}
-          
-          {% endfor %}
-        
-        </div>
-        
+      {%- assign unfocused_color = "6c757d" -%}
 
+      {% for account in site.author %}
+
+      {%- assign service_name = account[0] -%}
+      {%- assign service_data = site.data.social-media[service_name] -%}
+      {%- if service_data -%}
+      <a class="social mx-1 size-unchange-2" href="{{ service_data.url }}{{ account[1] }}"
+        style="color: #{{ unfocused_color }}" onMouseOver="this.style.color='#{{ service_data.color }}'"
+        onMouseOut="this.style.color='#{{ unfocused_color }}'">
+        <i class="{{ service_data.icon }} fa-1x"></i>
+      </a>
+      {%- endif -%}
+
+      {% endfor %}
+    </div>
   </div>
-
 </footer>
