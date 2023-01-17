@@ -1,0 +1,46 @@
+{% assign projects = site.projects | where:"navs","news"%}
+{% assign publications = site.publications | where: "navs", "news" %}
+
+{% assign news = site.news %}
+{% assign news = news | concat: projects %}
+{% assign news = news | concat: publications %}
+
+{% assign news = news | sort: "date" |reverse %}
+
+
+<br>
+<br>
+<h4 class='text-center mt-6 mb-2'>Recent News</h4>
+<hr width="25%"> 
+<div class="card-columns mt-3">
+    {% for p in news%}
+    {% if p.navs contains "template"%}
+    {% else %}
+    {%- if p.external_url -%}
+      {%- assign news_url = p.external_url -%}
+      {%- assign external    = true -%}
+    {%- else -%}
+      {%- assign news_url = p.url | relative_url -%}
+      {%- assign external    = false -%}
+    {%- endif -%}
+
+    {% assign news_type = "News" %}
+    {% if p.team %}
+        {%assign news_type = "Project" %}
+    {% endif %}
+    {% if p.authors %}
+        {%assign news_type = "Publication" %}
+    {%endif%}
+
+
+    {% assign news_image = p.image %}
+    {% assign news_location = p.location%}
+    {% assign news_name = p.name %}
+    {% assign news_id = p.name%}
+    {% assign news_tag = p.tags %}
+    {% assign news_year = p.year %}
+
+    {% include news/news-card.html %}
+    {% endif %}
+    {% endfor %}
+</div>
