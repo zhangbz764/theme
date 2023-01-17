@@ -25,20 +25,22 @@
 
     {% assign news_type = "News" %}
     {% if p.team %}
-        {%assign news_type = "Project" %}
+        {% assign news_type = "Project" %}
     {% endif %}
     {% if p.authors %}
-        {%assign news_type = "Publication" %}
+        {% assign news_type = "Publication" %}
     {%endif%}
 
 
     {% assign news_image = p.image %}
+    
     {% if news_type == "Project" %}
-      {% assign news_info = p.location%}
-    {%- endif -%}
-    {% if news_type == "Publication" %}
-      {% assign news_info = p.source%}
-    {%- endif -%}
+      {% assign news_info = p.location %}
+    {% elsif news_type == "Publication" %}
+      {% assign news_info = p.source %}
+    {% else %}
+    {%endif%}
+    
     {% assign news_name = p.name %}
     {% assign news_id = p.name%}
     {% assign news_tag = p.tags %}
