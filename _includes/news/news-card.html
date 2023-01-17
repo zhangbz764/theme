@@ -9,8 +9,8 @@
                 {{ news_name }}
             </h5>
             <p id="{{ news_id }}-loc" class="card-text mb-3 text-muted small">
-                {{% if news_location != empty %}}
-                {{ news_location }}
+                {{% if news_info != empty %}}
+                {{ news_info }}
                 {{% endif %}}
             </p>
             <p id="{{ news_id }}-tags" class="card-text">

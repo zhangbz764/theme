@@ -11,7 +11,6 @@
 <br>
 <br>
 <h4 class='text-center mt-6 mb-2'>Recent News</h4>
-<hr width="25%"> 
 <div class="card-columns mt-3">
     {% for p in news%}
     {% if p.navs contains "template"%}
@@ -34,7 +33,12 @@
 
 
     {% assign news_image = p.image %}
-    {% assign news_location = p.location%}
+    {% if news_type == "Project" %}
+      {% assign news_info = p.location%}
+    {%- endif -%}
+    {% if news_type == "Publication" %}
+      {% assign news_info = p.source%}
+    {%- endif -%}
     {% assign news_name = p.name %}
     {% assign news_id = p.name%}
     {% assign news_tag = p.tags %}
