@@ -43,4 +43,13 @@ function getTheme() {
 
 function setTheme(value) {
   document.documentElement.setAttribute(THEME_ATTR, value);
+  
+  if( value === themes.LIGHT) {
+    document.getElementById("seu-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-black.jpg";
+    document.getElementById("aaa-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-black.jpg";
+  }
+  else {
+    document.getElementById("seu-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/seu-arch-white.jpg";
+    document.getElementById("aaa-logo").src = "https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/aaa-long-white.jpg";
+  }
 }
