@@ -1,0 +1,26 @@
+<div class="wow animated fadeIn" data-wow-delay=".15s">
+    <a href="{{ news_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%}
+        target="_blank" {%- endif -%}>
+        {%- if news_image -%}
+        <img id="{{ news_id }}-img" class="card-img-top mt-0" src="{{ news_image}}" alt="{{ news_name }}" />
+        {%- endif -%}
+        <div class="card-body p-3">
+            <h5 id="{{ news_id }}-name" class="card-title">
+                {{ news_name }}
+            </h5>
+            <p id="{{ news_id }}-loc" class="card-text mb-3 text-muted small">
+                {{% if news_location != empty %}}
+                {{ news_location }}
+                {{% endif %}}
+            </p>
+            <p id="{{ news_id }}-tags" class="card-text">
+                {%- for tag in news_tag -%}
+                <span class="badge badge-pill text-primary border border-primary ">{{ tag }}</span>
+                {%- endfor -%}
+            </p>
+        </div>
+        <div class="card-footer text-muted small m-0 py-2">
+            {{news_type}} | {{ news_year }}
+        </div>
+    </a>
+</div>
