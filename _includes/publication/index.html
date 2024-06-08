@@ -1,9 +1,20 @@
-<div class="card-columns mt-2">
+<div class="card-group mt-2">
+  {% assign current_year = nil %}
 
   {% for publication in site.publications reversed %}
       
     {%- if publication.navs contains "template" -%}
     {%- else -%}
+      {%- assign publication_year = publication.date | date: "%Y" -%}
+      {% if current_year != publication_year %}
+      {% assign current_year = publication_year %}
+      <div class="col-12">
+        <h2 class="publication-year-heading">{{ current_year }}</h2>
+      </div>
+      {% endif %}
+
+
+
       {% include publication/publication-card.html %}
     {%- endif -%}
   {% endfor %}
