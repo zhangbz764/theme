@@ -1,6 +1,6 @@
-<div class="card-group mt-2">
+<div class="card-columns mt-2">
 
-  {% for publication in site.publications %}
+  {% for publication in site.publications reversed %}
       
     {%- if publication.navs contains "template" -%}
     {%- else -%}
