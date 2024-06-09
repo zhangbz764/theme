@@ -32,28 +32,29 @@
   <a href="{{ publication_url }}" class="post card {{ card_style }} p-0" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
     <img src="{{publication.image}}" class="publication-card-img">
     <div class="card-img-overlay">
-  {%else%}
-  <a href="{{ publication_url }}" class="post card {{ card_style }} p-0" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
-  {% endif %}
-    <div class="card-body {{ text_style }} mb-2" >
+      {%else%}
+      <a href="{{ publication_url }}" class="post card {{ card_style }}" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
+        {% endif %}
+        <div class="card-body {{ text_style }} pa-0">
 
-      <h4 class="card-title">{{ publication.title }}</h4>
+          <h4 class="card-title">{{ publication.title }}</h4>
 
-      {% if publication.subtitle %}
-      <h6 class="card-subtitle mb-3 text-muted">{{ publication.subtitle }}</h6>
-      {% endif %}
+          {% if publication.subtitle %}
+          <h6 class="card-subtitle mb-3 text-muted">{{ publication.subtitle }}</h6>
+          {% endif %}
 
-      <h6 class="card-text small max-lines-1">
-        {{ publication.authors | join: ", " }}
-      </h6>
+          <h6 class="card-text small max-lines-1">
+            {{ publication.authors | join: ", " }}
+          </h6>
 
-      <p class="card-text max-lines-1">
-        {% for tag in publication.tags %}
-        <span class="badge {{ badge_style }}">{{ tag }}</span>
-        {% endfor %}
-      </p>
-    </div>
-    {% if publication.image %}
+          <p class="card-text max-lines-1">
+            {% for tag in publication.tags %}
+            <span class="badge {{ badge_style }}">{{ tag }}</span>
+            {% endfor %}
+          </p>
+        </div>
+
+        {% if publication.image %}
     </div>
     <div class="card-footer {{ text_style }} m-0 px-4 py-2 d-flex justify-content-between">
       <div>
@@ -76,41 +77,21 @@
   </a>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll('.post.card');
 
-<!--<div class="col-lg-6 my-3 wow animated fadeIn" data-wow-delay=".15s">-->
-<!--  {% if publication.image %}-->
-<!--  <a href="{{ publication_url }}" class="post card {{ card_style }} p-0" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>-->
-<!--    <img src="{{publication.image}}" class="publication-card-img">-->
-<!--    <div class="card-img-overlay">-->
-<!--      {%else%}-->
-<!--      <a href="{{ publication_url }}" class="post card {{ card_style }}" {%- if publication.external_url and-->
-<!--         site.open_new_tab -%} target="_blank" {%- endif -%}>-->
-<!--        {% endif %}-->
-<!--        <div class="card-body {{ text_style }}" >-->
+    cards.forEach(function(card) {
+      const img = card.querySelector('.publication-card-img');
+      const cardBody = card.querySelector('.card-body');
+      const cardFooter = card.querySelector('.card-footer');
 
-<!--          <h4 class="card-title max-lines-2">{{ publication.title }}</h4>-->
-<!--          <h6 class="card-subtitle mb-3 text-muted max-lines-3">{{ publication.subtitle }}</h6>-->
+      // Calculate the total height of the card content
+      const totalContentHeight = cardBody.scrollHeight + (cardFooter ? cardFooter.scrollHeight : 0);
 
-<!--          <h6 class="card-text small max-lines-1">-->
-<!--            {{ publication.authors | join: ", " }}-->
-<!--          </h6>-->
-
-<!--          <p class="card-text max-lines-1">-->
-<!--            {% for tag in publication.tags %}-->
-<!--            <span class="badge {{ badge_style }}">{{ tag }}</span>-->
-<!--            {% endfor %}-->
-<!--          </p>-->
-<!--        </div>-->
-<!--        {% if publication.image %}-->
-<!--    </div>-->
-<!--    <div class="card-footer {{ text_style }} m-0">-->
-<!--      {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}-->
-<!--    </div>-->
-<!--    {% else %}-->
-<!--    <div class="card-footer {{ text_style }}">-->
-<!--      {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}-->
-<!--    </div>-->
-<!--    {% endif %}-->
-<!--  </a>-->
-<!--</div>-->
+      // Set the height of the image to match the total content height
+      img.style.height = totalContentHeight + 'px';
+    });
+  });
+</script>
 

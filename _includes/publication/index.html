@@ -1,10 +1,23 @@
+<h2 class="pt-3 text-center my-5">Books & Chapters</h2>
+
+{% assign books = site.publications | where:"paper_type", "Book" %}
+{% for book in books reversed %}
+  {% include publication/publication-card.html %}
+{% endfor %}
+
+<h2 class="pt-3 text-center my-5">Articles & Papers</h2>
+
 <div class="card-group mt-2">
   {% assign current_year = nil %}
 
   {% for publication in site.publications reversed %}
       
     {%- if publication.navs contains "template" -%}
+
+    {%- else if publication.paper_type = "Book" -%}
+
     {%- else -%}
+
       {%- assign publication_year = publication.date | date: "%Y" -%}
       {% if current_year != publication_year %}
       {% assign current_year = publication_year %}
@@ -12,7 +25,6 @@
         <h2 class="publication-year-heading ma-0 pt-1 pb-0">{{ current_year }}</h2>
       </div>
       {% endif %}
-
 
 
       {% include publication/publication-card.html %}

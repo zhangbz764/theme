@@ -72,6 +72,7 @@ a.bg-primary:hover {
 .publication-card-img {
     width: 100%;
     height: auto;
+    max-height: none;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     opacity: 0.2;  
