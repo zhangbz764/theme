@@ -33,9 +33,9 @@
     <img src="{{publication.image}}" class="publication-card-img">
     <div class="card-img-overlay">
       {%else%}
-      <a href="{{ publication_url }}" class="post card {{ card_style }}" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
+      <a href="{{ publication_url }}" class="post card {{ card_style }} p-0" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
         {% endif %}
-        <div class="card-body {{ text_style }} pa-0">
+        <div class="card-body {{ text_style }} mb-2" >
 
           <h4 class="card-title">{{ publication.title }}</h4>
 
@@ -53,7 +53,6 @@
             {% endfor %}
           </p>
         </div>
-
         {% if publication.image %}
     </div>
     <div class="card-footer {{ text_style }} m-0 px-4 py-2 d-flex justify-content-between">
@@ -76,22 +75,3 @@
     {% endif %}
   </a>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const cards = document.querySelectorAll('.post.card');
-
-    cards.forEach(function(card) {
-      const img = card.querySelector('.publication-card-img');
-      const cardBody = card.querySelector('.card-body');
-      const cardFooter = card.querySelector('.card-footer');
-
-      // Calculate the total height of the card content
-      const totalContentHeight = cardBody.scrollHeight + (cardFooter ? cardFooter.scrollHeight : 0);
-
-      // Set the height of the image to match the total content height
-      img.style.height = totalContentHeight + 'px';
-    });
-  });
-</script>
-
