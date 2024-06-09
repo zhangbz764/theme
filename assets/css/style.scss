@@ -71,7 +71,7 @@ a.bg-primary:hover {
 
 .publication-card-img {
     width: 100%;
-    height: auto;
+    height: 15.5rem;
     max-height: none;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -110,7 +110,6 @@ a.bg-primary:hover {
     word-wrap: break-word;
     overflow: hidden;
     max-height: 15rem;
-    padding: 0;
 }
 
 @media (min-width: 100px) {  

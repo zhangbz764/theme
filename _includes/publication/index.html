@@ -4,12 +4,11 @@
 <div class="card-group mt-2">
   {% for book in books reversed %}
 
-  {%- assign book_img  = people.image -%}
-<!--    {%- assign people_img   = people.image -%}-->
-<!--    {%- assign people_name  = people.name -%}-->
-<!--    {%- assign people_name_cn  = people.name_cn -%}-->
-<!--    {%- assign people_tags = people.tags -%}-->
-<!--    {%- assign people_url = people.url | relative_url -%}-->
+  {%- assign book_img  = book.image -%}
+<!--    {%- assign book_name  = book.name -%}-->
+<!--    {%- assign book_name_cn  = book.name_cn -%}-->
+<!--    {%- assign book_tags = book.tags -%}-->
+  {%- assign book_url = book.url | relative_url -%}
 
   {% include publication/book-card.html %}
 

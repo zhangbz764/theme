@@ -33,9 +33,9 @@
     <img src="{{publication.image}}" class="publication-card-img">
     <div class="card-img-overlay">
       {%else%}
-      <a href="{{ publication_url }}" class="post card {{ card_style }} p-0" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
+      <a href="{{ publication_url }}" class="post card {{ card_style }}" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
         {% endif %}
-        <div class="card-body {{ text_style }} mb-2" >
+        <div class="card-body {{ text_style }}" >
 
           <h4 class="card-title">{{ publication.title }}</h4>
 
