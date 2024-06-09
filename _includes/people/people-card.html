@@ -1,10 +1,11 @@
-<div class="col-sm-6 col-md-4 col-lg-3 wow animated fadeIn" data-wow-delay=".15s">
+<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 wow animated fadeIn" data-wow-delay=".15s">
   <a href="{{ people_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
     <!--    照片    -->
     {%- if people_img -%}
     <img id="{{ people_id }}-img" class="card-img-top people-card-img" src="{{ people_img }}" alt="{{ people_name }}" />
+    {% else %}
+    <img class="card-img-top people-card-img" src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg"  alt="default"/>
     {%- endif -%}
-
     <div class="card-body">
         <!--    标签    -->
         <p id="{{ people_id }}-tags" class="card-text">
@@ -20,7 +21,7 @@
           {{ people_name }}
         </h4>
         <!--    中文名    -->
-        <h5 id="{{ people_id }}-name_cn" class="card-title mb-1">
+        <h5 id="{{ people_id }}-name_cn" class="card-text mb-1">
             {{ people_name_cn }}
         </h5>
     </div>
