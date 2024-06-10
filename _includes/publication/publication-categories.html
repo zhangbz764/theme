@@ -10,13 +10,16 @@
     {% assign latest_b = books | first %}
     {% if latest_b %}
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/books-chapters" class="post card bg-primary">
+        <a href="/publication/books-chapters" class="post card bg-primary p-0">
             {% if latest_b.image %}
-            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
+            <img src="{{ latest_b.image }}" class="publication-card-img" alt=""/>
             {% endif %}
-            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                <h4 class="card-title">Books & Chapters</h4>
+            <div class="card-img-overlay">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <h4 class="card-title">Books & Chapters</h4>
+                </div>
             </div>
+
         </a>
     </div>
     {% else %}
@@ -27,12 +30,14 @@
     {% assign latest_a = articles | first %}
     {% if latest_a %}
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/journal-articles" class="post card bg-secondary">
+        <a href="/publication/journal-articles" class="post card bg-secondary p-0">
             {% if latest_a.image %}
-            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
+            <img class="publication-card-img" src="{{ latest_a.image }}" alt=""/>
             {% endif %}
-            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                <h4 class="card-title">Journal Articles</h4>
+            <div class="card-img-overlay">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <h4 class="card-title">Journal Articles</h4>
+                </div>
             </div>
         </a>
     </div>
@@ -44,12 +49,14 @@
     {% assign latest_p = papers | first %}
     {% if latest_p %}
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/conference-papers" class="post card bg-danger">
+        <a href="/publication/conference-papers" class="post card bg-danger p-0">
             {% if latest_p.image %}
-            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
+            <img class="publication-card-img" src="{{ latest_p.image }}" alt=""/>
             {% endif %}
-            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                <h4 class="card-title">Conference Papers</h4>
+            <div class="card-img-overlay">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <h4 class="card-title">Conference Papers</h4>
+                </div>
             </div>
         </a>
     </div>
@@ -61,12 +68,14 @@
     {% assign latest_t = theses | first %}
     {% if latest_t %}
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/theses-dissertations" class="post card bg-white">
+        <a href="/publication/theses-dissertations" class="post card bg-info p-0">
             {% if latest_t.image %}
-            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
+            <img class="publication-card-img" src="{{ latest_t.image }}" alt=""/>
             {% endif %}
-            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                <h4 class="card-title">Theses & Dissertations</h4>
+            <div class="card-img-overlay">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <h4 class="card-title">Theses & Dissertations</h4>
+                </div>
             </div>
         </a>
     </div>

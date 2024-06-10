@@ -5,9 +5,9 @@
 <div class="card-group mt-2">
   {% assign current_year = nil %}
 
-  {% for paper in papers reversed %}
+  {% for publication in papers reversed %}
 
-      {%- assign publication_year = paper.date | date: "%Y" -%}
+      {%- assign publication_year = publication.date | date: "%Y" -%}
       {% if current_year != publication_year %}
       {% assign current_year = publication_year %}
       <div class="col-12">
