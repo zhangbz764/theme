@@ -1,7 +1,7 @@
 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 wow animated fadeIn" data-wow-delay=".15s">
-    <a href="{{ people_url }}" class="project card text-themed book-card" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
+    <a href="{{ book_url }}" class="project card text-themed book-card" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
         {%- if book_img -%}
-        <img id="{{ people_id }}-img" class="card-img-top book-card-img" src="{{ people_img }}" alt="{{ people_name }}" />
+        <img class="book-card-img" src="{{ book_img }}" alt="{{ book_title }}" />
         {% else %}
         <img class="card-img-top book-card-img" src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg"  alt="default"/>
         {%- endif -%}
