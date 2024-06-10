@@ -1,12 +1,20 @@
-.book.card {
-  border-radius: 0;
-  text-decoration: none !important;
+.book-link {
+  display: block;
   margin: 10px auto;
-  background-color: transparent; /* 取消卡片背景 */
-  transition: transform 400ms;
+  transition: transform 400ms, box-shadow 400ms;
+  text-decoration: none !important;
+}
 
-  &:hover:not(.post) {
-    transform: translateY(-8px);
-    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
-  }
+.book-link:hover {
+  transform: translateY(-8px);
+  box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+}
+
+.book-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain; /* 保证图片完整显示 */
+  background-color: #f8f9fa; /* 模拟留白效果 */
 }

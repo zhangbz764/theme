@@ -32,46 +32,46 @@
   <a href="{{ publication_url }}" class="post card {{ card_style }} p-0" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
     <img src="{{publication.image}}" class="publication-card-img">
     <div class="card-img-overlay">
-      {%else%}
-      <a href="{{ publication_url }}" class="post card {{ card_style }}" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
-        {% endif %}
-        <div class="card-body {{ text_style }}" >
+  {%else%}
+  <a href="{{ publication_url }}" class="post card {{ card_style }}" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
+  {% endif %}
+    <div class="card-body {{ text_style }} p-0" >
 
-          <h4 class="card-title">{{ publication.title }}</h4>
+      <h4 class="card-title">{{ publication.title }}</h4>
 
-          {% if publication.subtitle %}
-          <h6 class="card-subtitle mb-3 text-muted">{{ publication.subtitle }}</h6>
-          {% endif %}
+      {% if publication.subtitle %}
+      <h6 class="card-subtitle mb-3 text-muted">{{ publication.subtitle }}</h6>
+      {% endif %}
 
-          <h6 class="card-text small max-lines-1">
-            {{ publication.authors | join: ", " }}
-          </h6>
+      <h6 class="card-text small max-lines-1">
+        {{ publication.authors | join: ", " }}
+      </h6>
 
-          <p class="card-text max-lines-1">
-            {% for tag in publication.tags %}
-            <span class="badge {{ badge_style }}">{{ tag }}</span>
-            {% endfor %}
-          </p>
-        </div>
-        {% if publication.image %}
+      <p class="card-text max-lines-1">
+        {% for tag in publication.tags %}
+        <span class="badge {{ badge_style }}">{{ tag }}</span>
+        {% endfor %}
+      </p>
     </div>
-    <div class="card-footer {{ text_style }} m-0 px-4 py-2 d-flex justify-content-between">
-      <div>
-        {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}
-      </div>
-      <div>
-        {{ publication.source }}
-      </div>
+  {% if publication.image %}
+  </div>
+  <div class="card-footer {{ text_style }} m-0 px-4 py-2 d-flex justify-content-between">
+    <div>
+      {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}
     </div>
-    {% else %}
-    <div class="card-footer {{ text_style }} px-4 py-2 d-flex justify-content-between">
-      <div>
-        {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}
-      </div>
-      <div>
-        {{ publication.source }}
-      </div>
+    <div>
+      {{ publication.source }}
     </div>
-    {% endif %}
+  </div>
+  {% else %}
+  <div class="card-footer {{ text_style }} px-4 py-2 d-flex justify-content-between">
+    <div>
+      {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}
+    </div>
+    <div>
+      {{ publication.source }}
+    </div>
+  </div>
+  {% endif %}
   </a>
 </div>
