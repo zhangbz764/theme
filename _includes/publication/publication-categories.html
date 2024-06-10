@@ -12,12 +12,10 @@
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
         <a href="/publication/books-chapters" class="post card bg-primary">
             {% if latest_b.image %}
-            <img class="card-img-top people-card-img" src="{{ latest_b.image }}" alt="{{ latest_b.title }}" />
+            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-                    <h3>Books & Chapters</h3>
-                </div>
+            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                <h4 class="card-title">Books & Chapters</h4>
             </div>
         </a>
     </div>
@@ -31,12 +29,10 @@
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
         <a href="/publication/journal-articles" class="post card bg-secondary">
             {% if latest_a.image %}
-            <img class="card-img-top people-card-img" src="{{ latest_a.image }}" alt="{{ latest_a.title }}" />
+            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-                    <h3>Journal Articles</h3>
-                </div>
+            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                <h4 class="card-title">Journal Articles</h4>
             </div>
         </a>
     </div>
@@ -45,17 +41,15 @@
     {% endif %}
 
     <!--    Conference Papers    -->
-    {% assign latest_p = paper | first %}
+    {% assign latest_p = papers | first %}
     {% if latest_p %}
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
         <a href="/publication/conference-papers" class="post card bg-danger">
             {% if latest_p.image %}
-            <img class="card-img-top people-card-img" src="{{ latest_p.image }}" alt="{{ latest_p.title }}" />
+            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-                    <h3>Conference Papers</h3>
-                </div>
+            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                <h4 class="card-title">Conference Papers</h4>
             </div>
         </a>
     </div>
@@ -69,12 +63,10 @@
     <div class="col-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
         <a href="/publication/theses-dissertations" class="post card bg-white">
             {% if latest_t.image %}
-            <img class="card-img-top people-card-img" src="{{ latest_t.image }}" alt="{{ latest_t.title }}" />
+            <img class="publication-card-img" src="{{ latest_b.image }}" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-                    <h3>Theses & Dissertations</h3>
-                </div>
+            <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                <h4 class="card-title">Theses & Dissertations</h4>
             </div>
         </a>
     </div>
