@@ -1,15 +1,15 @@
 <div class="card-group mt-2">
-    {% for category, publications in categories %}
-    {% assign latest_publication = publications | first %}
-    {% if latest_publication %}
+
+    {% assign latest_b = books | first %}
+    {% if latest_b %}
     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="{{ site.baseurl }}/publications/{{ categories_page[category] }}" class="card-link">
-            <div class="card" style="border-radius: 10px; overflow: hidden; position: relative;">
-                <div class="card-background" style="background-image: url('{{ latest_publication.image }}'); background-size: cover; background-position: center; height: 200px;">
-                    <div class="card-overlay" style="background-color: rgba(0, 0, 0, 0.2); width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
-                    <div class="card-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
-                        <h3>{{ category }}</h3>
-                    </div>
+        <a href="/publications/books-chapters" class="project card text-themed">
+            {% if latest_b.image %}
+            <img class="card-img-top people-card-img" src="{{ latest_b.image }}" alt="{{ latest_b.title }}" />
+            {% endif %}
+            <div class="card-img-overlay">
+                <div class="card-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+                    <h3>Books & Chapters</h3>
                 </div>
             </div>
         </a>
@@ -17,42 +17,61 @@
     {% else %}
 
     {% endif %}
-    {% endfor %}
+
+
+    {% assign latest_a = articles | first %}
+    {% if latest_a %}
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
+        <a href="/publications/books-chapters" class="project card text-themed">
+            {% if latest_a.image %}
+            <img class="card-img-top people-card-img" src="{{ latest_b.image }}" alt="{{ latest_b.title }}" />
+            {% endif %}
+            <div class="card-img-overlay">
+                <div class="card-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+                    <h3>Journal Articles</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% else %}
+
+    {% endif %}
+
 </div>
 
-<style>
-    .card-link {
-        text-decoration: none;
-    }
+<!--<style>-->
+<!--    .card-link {-->
+<!--        text-decoration: none;-->
+<!--    }-->
 
-    .card {
-        width: 100%;
-        padding-bottom: 100%; /* Maintain square aspect ratio */
-        position: relative;
-    }
+<!--    .card {-->
+<!--        width: 100%;-->
+<!--        padding-bottom: 100%; /* Maintain square aspect ratio */-->
+<!--        position: relative;-->
+<!--    }-->
 
-    .card-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+<!--    .card-background {-->
+<!--        position: absolute;-->
+<!--        top: 0;-->
+<!--        left: 0;-->
+<!--        width: 100%;-->
+<!--        height: 100%;-->
+<!--    }-->
 
-    .card-overlay {
-        border-radius: 10px;
-    }
+<!--    .card-overlay {-->
+<!--        border-radius: 10px;-->
+<!--    }-->
 
-    .card-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
-    }
+<!--    .card-content {-->
+<!--        position: absolute;-->
+<!--        top: 50%;-->
+<!--        left: 50%;-->
+<!--        transform: translate(-50%, -50%);-->
+<!--        text-align: center;-->
+<!--        color: white;-->
+<!--    }-->
 
-    .arrow-icon {
-        margin-top: 10px;
-    }
-</style>
+<!--    .arrow-icon {-->
+<!--        margin-top: 10px;-->
+<!--    }-->
+<!--</style>-->

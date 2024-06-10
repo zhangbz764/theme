@@ -3,22 +3,6 @@
 {% assign papers = site.publications | where:"paper_type", "Conference Paper" %}
 {% assign theses = site.publications | where:"paper_type", "Master Thesis" or "Doctoral Dissertation" %}
 
-{% assign categories =
-  {
-  'Books & Chapters': books,
-  'Journal Articles': articles,
-  'Conference Papers': papers,
-  'Theses & Dissertations': theses
-  }
-%}
-{% assign categories_page =
-  {
-  'Books & Chapters': 'books-chapters',
-  'Journal Articles': 'journal-articles',
-  'Conference Papers': 'conference-papers',
-  'Theses & Dissertations': 'theses-dissertations'
-  }
-%}
 
 {% include publication/publication-categories.html %}
 
