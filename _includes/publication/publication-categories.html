@@ -10,13 +10,13 @@
     {% assign latest_b = books | last %}
     {% if latest_b %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/books-chapters" class="post card bg-danger p-0">
+        <a href="/publication/books-chapters" class="post card bg-books-chapters p-0">
             {% if latest_b.image %}
-            <img src="{{ latest_b.image }}" style="height: 8rem;" class="publication-card-img" alt=""/>
+            <img src="{{ latest_b.image }}" style="height: 8rem; width: 100%; " class="publication-card-img" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                    <h4 class="card-title">Books<br>&<br>Chapters</h4>
+            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center">Books<br>&<br>Chapters</h4>
                 </div>
             </div>
 
@@ -30,13 +30,13 @@
     {% assign latest_a = articles | last %}
     {% if latest_a %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/journal-articles" class="post card bg-secondary p-0">
+        <a href="/publication/journal-articles" class="post card bg-journal-articles p-0">
             {% if latest_a.image %}
-            <img class="publication-card-img" style="height: 8rem;" src="{{ latest_a.image }}" alt=""/>
+            <img class="publication-card-img" style="height: 8rem; width: 100%; " src="{{ latest_a.image }}" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                    <h4 class="card-title">Journal<br>Articles</h4>
+            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center">Journal<br>Articles</h4>
                 </div>
             </div>
         </a>
@@ -49,13 +49,13 @@
     {% assign latest_p = papers | last %}
     {% if latest_p %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/conference-papers" class="post card bg-danger p-0">
+        <a href="/publication/conference-papers" class="post card bg-conference-papers p-0">
             {% if latest_p.image %}
-            <img class="publication-card-img" style="height: 8rem;" src="{{ latest_p.image }}" alt=""/>
+            <img class="publication-card-img" style="height: 8rem; width: 100%; " src="{{ latest_p.image }}" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                    <h4 class="card-title">Conference<br>Papers</h4>
+            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center">Conference<br>Papers</h4>
                 </div>
             </div>
         </a>
@@ -68,13 +68,13 @@
     {% assign latest_t = theses | last %}
     {% if latest_t %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/theses-dissertations" class="post card bg-info p-0">
+        <a href="/publication/theses-dissertations" class="post card bg-theses-dissertations p-0">
             {% if latest_t.image %}
-            <img class="publication-card-img" style="height: 8rem;" src="{{ latest_t.image }}" alt=""/>
+            <img class="publication-card-img" style="height: 8rem; width: 100%; object-fit: cover;" src="{{ latest_t.image }}" alt=""/>
             {% endif %}
-            <div class="card-img-overlay">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                    <h4 class="card-title">Theses<br>&<br>Dissertations</h4>
+            <div class="card-img-overlay d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center" style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center">Theses<br>&<br>Dissertations</h4>
                 </div>
             </div>
         </a>

@@ -27,7 +27,7 @@
 {%- assign publication_url = publication.url | relative_url -%}
 {%- endif -%}
 
-<!-- zbz 修改 -->
+
 {%- if publication.paper_type == 'Book' or 'Chapter' -%}
   {%- assign card_style = 'border border-books-chapters' -%}
   {%- assign badge_style = 'badge-books-chapters' -%}
@@ -51,9 +51,9 @@
     <img src="{{publication.image}}" class="publication-card-img">
     <div class="card-img-overlay">
   {%else%}
-  <a href="{{ publication_url }}" class="post card {{ card_style }} px-4" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
+  <a href="{{ publication_url }}" class="post card {{ card_style }} " {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
   {% endif %}
-    <div class="card-body {{ text_style }} p-0 pb-3" >
+    <div class="card-body {{ text_style }} p-0 px-1 pb-3" >
 
       <h5 class="card-title">{{ publication.title }}</h5>
 
