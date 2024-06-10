@@ -1,15 +1,18 @@
-{% assign books = site.publications | where:"paper_type", "Book" or "Chapter" %}
-{% assign articles = site.publications | where:"paper_type", "Journal Article" %}
-{% assign papers = site.publications | where:"paper_type", "Conference Paper" %}
-{% assign theses = site.publications | where:"paper_type", "Master Thesis" or "Doctoral Dissertation" %}
-
 
 {% include publication/publication-categories.html %}
 
 
 <h2 class="pt-3 text-center my-5">Latest Publications</h2>
 
-
+{% assign count = 0 %}
+{% for publication in site.publications reversed %}
+    {% if count < 10 %}
+        {% include publication/publication-card.html %}
+        {% assign count = count | plus: 1 %}
+    {% else %}
+        {% break %}
+    {% endif %}
+{% endfor %}
 
 
 <!--<h2 class="pt-3 text-center my-5">Books & Chapters</h2>-->
