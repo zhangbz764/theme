@@ -1,9 +1,15 @@
+{%- if publication.external_url -%}
+{%- assign book_url = book.external_url -%}
+{%- else -%}
+{%- assign book_url = book.url | relative_url -%}
+{%- endif -%}
+
 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 wow animated fadeIn" data-wow-delay=".15s">
-    <a href="{{ book_url }}" class="project card text-themed book-card" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
+    <a href="{{ book_url }}" class="book card text-themed book-card" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
         {%- if book_img -%}
         <img class="book-card-img" src="{{ book_img }}" alt="{{ book_title }}" />
         {% else %}
-        <img class="card-img-top book-card-img" src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg"  alt="default"/>
+        <img class="book-card-img" src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg"  alt="default"/>
         {%- endif -%}
     </a>
 </div>

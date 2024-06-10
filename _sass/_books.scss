@@ -1,0 +1,12 @@
+.book.card {
+  border-radius: 0;
+  text-decoration: none !important;
+  margin: 10px auto;
+  background-color: transparent; /* 取消卡片背景 */
+  transition: transform 400ms;
+
+  &:hover:not(.post) {
+    transform: translateY(-8px);
+    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+  }
+}

@@ -6,16 +6,12 @@
 
   {%- assign book_img  = book.image -%}
   {%- assign book_title  = book.title -%}
-<!--    {%- assign book_name_cn  = book.name_cn -%}-->
-<!--    {%- assign book_tags = book.tags -%}-->
-  {%- assign book_url = book.url | relative_url -%}
 
   {% include publication/book-card.html %}
 
   {% endfor %}
 
 </div>
-
 
 
 
