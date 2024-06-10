@@ -28,7 +28,7 @@
 {%- endif -%}
 
 
-{%- if publication.paper_type == 'Book' or 'Chapter' -%}
+{%- if publication.paper_type == 'Book' or publication.paper_type == 'Chapter' -%}
   {%- assign card_style = 'border border-book' -%}
   {%- assign badge_style = 'badge-book' -%}
 {%- elsif publication.paper_type == 'Journal Article' -%}
@@ -37,7 +37,7 @@
 {%- elsif publication.paper_type == 'Conference Paper' -%}
   {%- assign card_style = 'border border-conference' -%}
   {%- assign badge_style = 'badge-conference' -%}
-{%- elsif publication.paper_type == 'Master Thesis' or 'Doctoral Dissertation' -%}
+{%- elsif publication.paper_type == 'Master Thesis' or publication.paper_type == 'Doctoral Dissertation' -%}
   {%- assign card_style = 'border border-thesis' -%}
   {%- assign badge_style = 'badge-thesis' -%}
 {%- else -%}

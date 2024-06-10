@@ -1,11 +1,13 @@
-{% assign theses = site.publications | where:"paper_type", "Master Thesis" or "Doctoral Dissertation" %}
+{% assign theses = site.publications | where: "paper_type", "Master Thesis" %}
+{% assign dissertations = site.publications | where: "paper_type", "Doctoral Dissertation" %}
+{% assign theses_and_dissertations = books | concat: chapters %}
 
 <h2 class="pt-3 text-center my-5">Theses & Dissertations</h2>
 
 <div class="card-group mt-2">
   {% assign current_year = nil %}
 
-  {% for publication in theses reversed %}
+  {% for publication in theses_and_dissertations reversed %}
 
       {%- assign publication_year = publication.date | date: "%Y" -%}
       {% if current_year != publication_year %}

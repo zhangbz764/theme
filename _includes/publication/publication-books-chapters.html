@@ -1,11 +1,13 @@
-{% assign books = site.publications | where:"paper_type", "Book" or "Chapter" %}
+{% assign books = site.publications | where: "paper_type", "Book" %}
+{% assign chapters = site.publications | where: "paper_type", "Chapter" %}
+{% assign books_and_chapters = books | concat: chapters %}
 
 <h2 class="pt-3 text-center my-5">Books & Chapters</h2>
 
 <div class="card-group mt-2">
   {% assign current_year = nil %}
 
-  {% for publication in books reversed %}
+  {% for publication in books_and_chapters reversed %}
 
       {%- assign publication_year = publication.date | date: "%Y" -%}
       {% if current_year != publication_year %}
