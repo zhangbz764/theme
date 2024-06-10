@@ -1,6 +1,9 @@
 .book-link {
   display: block;
-  margin: 10px auto;
+  position: relative;
+  width: 100%;
+  padding-top: calc(297 / 210 * 100%); /* A4 纸比例 */
+  overflow: hidden;
   transition: transform 400ms, box-shadow 400ms;
   text-decoration: none !important;
 }
@@ -11,10 +14,13 @@
 }
 
 .book-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
   object-fit: contain; /* 保证图片完整显示 */
-  background-color: #f8f9fa; /* 模拟留白效果 */
+  background-color: transparent; /* 模拟留白效果 */
 }

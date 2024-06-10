@@ -35,9 +35,9 @@
   {%else%}
   <a href="{{ publication_url }}" class="post card {{ card_style }}" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
   {% endif %}
-    <div class="card-body {{ text_style }} p-0" >
+    <div class="card-body {{ text_style }} p-0 pb-3" >
 
-      <h4 class="card-title">{{ publication.title }}</h4>
+      <h5 class="card-title">{{ publication.title }}</h5>
 
       {% if publication.subtitle %}
       <h6 class="card-subtitle mb-3 text-muted">{{ publication.subtitle }}</h6>
