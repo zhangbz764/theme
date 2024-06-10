@@ -29,20 +29,20 @@
 
 
 {%- if publication.paper_type == 'Book' or 'Chapter' -%}
-  {%- assign card_style = 'border border-books-chapters' -%}
-  {%- assign badge_style = 'badge-books-chapters' -%}
+  {%- assign card_style = 'border border-book' -%}
+  {%- assign badge_style = 'badge-book' -%}
 {%- elsif publication.paper_type == 'Journal Article' -%}
-  {%- assign card_style = 'border border-journal-articles' -%}
-  {%- assign badge_style = 'badge-journal-articles' -%}
+  {%- assign card_style = 'border border-journal' -%}
+  {%- assign badge_style = 'badge-journal' -%}
 {%- elsif publication.paper_type == 'Conference Paper' -%}
-  {%- assign card_style = 'border border-conference-papers' -%}
-  {%- assign badge_style = 'badge-conference-papers' -%}
+  {%- assign card_style = 'border border-conference' -%}
+  {%- assign badge_style = 'badge-conference' -%}
 {%- elsif publication.paper_type == 'Master Thesis' or 'Doctoral Dissertation' -%}
-  {%- assign card_style = 'border border-theses-dissertations' -%}
-  {%- assign badge_style = 'badge-theses-dissertations' -%}
+  {%- assign card_style = 'border border-thesis' -%}
+  {%- assign badge_style = 'badge-thesis' -%}
 {%- else -%}
-  {%- assign card_style = 'border border-secondary' -%}
-  {%- assign badge_style = 'badge-secondary' -%}
+  {%- assign card_style = 'border border-primary' -%}
+  {%- assign badge_style = 'badge-primary' -%}
 {%- endif -%}
 
 <div class="col-lg-12 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">

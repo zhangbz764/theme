@@ -80,6 +80,16 @@ a.bg-primary:hover {
     overflow:hidden;
 }
 
+.publication-categories-img {
+  width: 100%;
+  height: 8rem;
+  max-height: none;
+  border-radius: 10px;
+  opacity: 0.2;
+  object-fit: cover;
+  overflow:hidden;
+}
+
 .people-card-img {
     width: 100%;
     aspect-ratio: 1/1;
