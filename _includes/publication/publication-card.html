@@ -50,10 +50,12 @@
   <a href="{{ publication_url }}" class="post card {{ card_style }} p-0" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
     <img src="{{publication.image}}" class="publication-card-img">
     <div class="card-img-overlay">
+      <div class="card-body {{ text_style }} p-0 pb-3" >
   {%else%}
   <a href="{{ publication_url }}" class="post card {{ card_style }} " {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
-  {% endif %}
     <div class="card-body {{ text_style }} p-0 px-1 pb-3" >
+  {% endif %}
+
 
       <h5 class="card-title">{{ publication.title }}</h5>
 
