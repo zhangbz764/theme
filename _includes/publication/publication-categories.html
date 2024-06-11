@@ -7,7 +7,7 @@
 
 {% assign theses = site.publications | where: "paper_type", "Master Thesis" %}
 {% assign dissertations = site.publications | where: "paper_type", "Doctoral Dissertation" %}
-{% assign theses_and_dissertations = books | concat: chapters %}
+{% assign theses_and_dissertations = theses | concat: dissertations %}
 
 
 <div class="row px-3">
@@ -15,12 +15,16 @@
     {% assign latest_b = books_and_chapters | last %}
     {% if latest_b %}
     <div class="col-6 col-md-3 mt-1 mb-3 mx-0 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/books-chapters" class="post card bg-books-chapters p-0">
+        {% if page.title == "Publications - Books & Chapters" %}
+        <a href="/publication/books-chapters" class="post card bg-book p-0">
+        {% else %}
+        <a href="/publication/books-chapters" class="post card border-book p-0">
+        {% endif %}
             {% if latest_b.image %}
             <img class="publication-categories-img" src="{{ latest_b.image }}" alt=""/>
             {% endif %}
             <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                <div class="card-body text-themed p-0 d-flex justify-content-center align-items-center"
                      style="height: 100%; width: 100%;">
                     <h4 class="card-title text-center m-0">Books<br>&<br>Chapters</h4>
                 </div>
@@ -36,12 +40,16 @@
     {% assign latest_a = articles | last %}
     {% if latest_a %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/journal-articles" class="post card bg-journal-articles p-0">
+        {% if page.title == "Publications - Journal Articles" %}
+        <a href="/publication/journal-articles" class="post card bg-journal p-0">
+        {% else %}
+        <a href="/publication/journal-articles" class="post card border-journal p-0">
+        {% endif %}
             {% if latest_a.image %}
             <img class="publication-categories-img" src="{{ latest_a.image }}" alt=""/>
             {% endif %}
             <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                <div class="card-body text-themed p-0 d-flex justify-content-center align-items-center"
                      style="height: 100%; width: 100%;">
                     <h4 class="card-title text-center m-0">Journal<br>Articles</h4>
                 </div>
@@ -56,12 +64,16 @@
     {% assign latest_p = papers | last %}
     {% if latest_p %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/conference-papers" class="post card bg-conference-papers p-0">
+        {% if page.title == "Publications - Conference Papers" %}
+        <a href="/publication/conference-papers" class="post card bg-conference p-0">
+        {% else %}
+        <a href="/publication/conference-papers" class="post card border-conference p-0">
+        {% endif %}
             {% if latest_p.image %}
             <img class="publication-categories-img" src="{{ latest_p.image }}" alt=""/>
             {% endif %}
             <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                <div class="card-body text-themed p-0 d-flex justify-content-center align-items-center"
                      style="height: 100%; width: 100%;">
                     <h4 class="card-title text-center m-0">Conference<br>Papers</h4>
                 </div>
@@ -76,12 +88,16 @@
     {% assign latest_t = theses_and_dissertations | last %}
     {% if latest_t %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/theses-dissertations" class="post card bg-theses-dissertations p-0">
+        {% if page.title == "Publications - Theses & Dissertations" %}
+        <a href="/publication/theses-dissertations" class="post card bg-thesis p-0">
+        {% else %}
+        <a href="/publication/theses-dissertations" class="post card border-thesis p-0">
+        {% endif %}
             {% if latest_t.image %}
             <img class="publication-categories-img" src="{{ latest_t.image }}" alt=""/>
             {% endif %}
             <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                <div class="card-body text-themed p-0 d-flex justify-content-center align-items-center"
                      style="height: 100%; width: 100%;">
                     <h4 class="card-title text-center m-0">Theses<br>&<br>Dissertations</h4>
                 </div>

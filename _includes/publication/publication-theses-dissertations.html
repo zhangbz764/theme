@@ -1,8 +1,8 @@
 {% assign theses = site.publications | where: "paper_type", "Master Thesis" %}
 {% assign dissertations = site.publications | where: "paper_type", "Doctoral Dissertation" %}
-{% assign theses_and_dissertations = books | concat: chapters %}
+{% assign theses_and_dissertations = theses | concat: dissertations %}
 
-<h2 class="pt-3 text-center my-5">Theses & Dissertations</h2>
+<h2 class="pt-3 text-center mt-5 mb-3">Theses & Dissertations</h2>
 
 <div class="card-group mt-2">
   {% assign current_year = nil %}
