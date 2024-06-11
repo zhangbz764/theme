@@ -8,14 +8,14 @@
             <h5 id="{{ news_id }}-name" class="card-title">
                 {{ news_name }}
             </h5>
-            <p id="{{ news_id }}-info" class="card-text mb-3 text-muted small">
+            <p id="{{ news_id }}-info" class="card-text mb-2 text-muted small">
                 {{% if news_info != empty %}}
                 {{ news_info }}
                 {{% endif %}}
             </p>
             <p id="{{ news_id }}-tags" class="card-text">
                 {%- for tag in news_tag -%}
-                <span class="badge badge-pill text-primary border border-primary ">{{ tag }}</span>
+                <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
                 {%- endfor -%}
             </p>
         </div>

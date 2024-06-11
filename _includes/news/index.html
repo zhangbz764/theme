@@ -39,12 +39,15 @@
     {% elsif news_type == "Publication" %}
       {% assign news_info = p.source %}
     {% else %}
+      {% assign news_info = "" %}
     {%endif%}
-    
+
+    {% if news_type == "Project" %}
+
     {% assign news_name = p.name %}
     {% assign news_id = p.name%}
     {% assign news_tag = p.tags %}
-    {% assign news_year = p.year %}
+    {% assign news_year = p.date | date: "%Y" %}
 
     {% include news/news-card.html %}
     {% endif %}
