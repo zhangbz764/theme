@@ -1,12 +1,12 @@
-{% assign books = site.publications | where: "paper_type", "Book" %}
-{% assign chapters = site.publications | where: "paper_type", "Chapter" %}
+{% assign books = site.publications | where: "pub_type", "Book" %}
+{% assign chapters = site.publications | where: "pub_type", "Chapter" %}
 {% assign books_and_chapters = books | concat: chapters %}
 
-{% assign articles = site.publications | where:"paper_type", "Journal Article" %}
-{% assign papers = site.publications | where:"paper_type", "Conference Paper" %}
+{% assign articles = site.publications | where:"pub_type", "Journal Article" %}
+{% assign papers = site.publications | where:"pub_type", "Conference Paper" %}
 
-{% assign theses = site.publications | where: "paper_type", "Master Thesis" %}
-{% assign dissertations = site.publications | where: "paper_type", "Doctoral Dissertation" %}
+{% assign theses = site.publications | where: "pub_type", "Master Thesis" %}
+{% assign dissertations = site.publications | where: "pub_type", "Doctoral Dissertation" %}
 {% assign theses_and_dissertations = theses | concat: dissertations %}
 
 

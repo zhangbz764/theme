@@ -1,5 +1,5 @@
-{% assign books = site.publications | where: "paper_type", "Book" %}
-{% assign chapters = site.publications | where: "paper_type", "Chapter" %}
+{% assign books = site.publications | where: "pub_type", "Book" %}
+{% assign chapters = site.publications | where: "pub_type", "Chapter" %}
 {% assign books_and_chapters = books | concat: chapters %}
 
 <h2 class="pt-3 text-center mt-5 mb-3">Books & Chapters</h2>

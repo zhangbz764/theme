@@ -28,16 +28,16 @@
 {%- endif -%}
 
 
-{%- if publication.paper_type == 'Book' or publication.paper_type == 'Chapter' -%}
+{%- if publication.pub_type == 'Book' or publication.pub_type == 'Chapter' -%}
   {%- assign card_style = 'border border-book' -%}
   {%- assign badge_style = 'badge-book' -%}
-{%- elsif publication.paper_type == 'Journal Article' -%}
+{%- elsif publication.pub_type == 'Journal Article' -%}
   {%- assign card_style = 'border border-journal' -%}
   {%- assign badge_style = 'badge-journal' -%}
-{%- elsif publication.paper_type == 'Conference Paper' -%}
+{%- elsif publication.pub_type == 'Conference Paper' -%}
   {%- assign card_style = 'border border-conference' -%}
   {%- assign badge_style = 'badge-conference' -%}
-{%- elsif publication.paper_type == 'Master Thesis' or publication.paper_type == 'Doctoral Dissertation' -%}
+{%- elsif publication.pub_type == 'Master Thesis' or publication.pub_type == 'Doctoral Dissertation' -%}
   {%- assign card_style = 'border border-thesis' -%}
   {%- assign badge_style = 'badge-thesis' -%}
 {%- else -%}
@@ -77,7 +77,7 @@
   </div>
   <div class="card-footer {{ text_style }} m-0 px-4 py-2 d-flex justify-content-between">
     <div>
-      {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}
+      {{ publication.date | date_to_long_string }} | {{ publication.pub_type }}
     </div>
     <div>
       {{ publication.source }}
@@ -86,7 +86,7 @@
   {% else %}
   <div class="card-footer {{ text_style }} px-4 py-2 d-flex justify-content-between">
     <div>
-      {{ publication.date | date_to_long_string }} | {{ publication.paper_type }}
+      {{ publication.date | date_to_long_string }} | {{ publication.pub_type }}
     </div>
     <div>
       {{ publication.source }}
