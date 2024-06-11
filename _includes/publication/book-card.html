@@ -3,7 +3,8 @@
 {%- else -%}
 {%- assign book_url = publication.url | relative_url -%}
 {%- endif -%}
-
+{%- assign book_img = publication.image -%}
+{%- assign book_title = publication.title -%}
 
 <!--<div class="row px-3">-->
 <!--    <div class="col-6 col-md-3 mt-1 mb-3 mx-0 wow animated fadeIn" data-wow-delay=".15s">-->
@@ -17,18 +18,12 @@
 <!--    </div>-->
 <!--</div>-->
 
-
-<div class="col-6 col-md-3 mb-4">
-    <a href="{{ book_url }}" {%- if book.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
+<div class="wow animated fadeIn col-6 col-sm-4 col-md-3 p-2" data-wow-delay=".15s">
+    <a href="{{ book_url }}" class="project card" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
         {%- if book_img -%}
-        <div class="book-cover">
-            <img src="{{ book_img }}" alt="{{ book_title }}">
-        </div>
+        <img class="card-img-top m-0" src="{{ book_img }}" alt="{{ book_title }}" style="border-radius: 15px" />
         {% else %}
-        <div class="book-cover">
-            <img src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg" alt="default"/>
-        </div>
+        <img class="card-img-top m-0" src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg" alt="default" style="border-radius: 10px"/>
         {%- endif -%}
     </a>
 </div>
-

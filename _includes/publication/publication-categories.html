@@ -15,7 +15,7 @@
     {% assign latest_b = books_and_chapters | last %}
     {% if latest_b %}
     <div class="col-6 col-md-3 mt-1 mb-3 mx-0 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/books-chapters" class="project card bg-book m-0" style="height: 100%; padding: 15px">
+        <a href="/publication/books-chapters" class="project card bg-book m-0 p-0" style="height: 100%; padding: 15px">
             {% if latest_b.image %}
             <img class="publication-categories-img" src="{{ latest_b.image }}" alt=""/>
             {% endif %}
@@ -36,7 +36,7 @@
     {% assign latest_a = articles | last %}
     {% if latest_a %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/journal-articles" class="project card bg-journal m-0" style="height: 100%; padding: 15px">
+        <a href="/publication/journal-articles" class="project card bg-journal m-0 p-0" style="height: 100%; padding: 15px">
             {% if latest_a.image %}
             <img class="publication-categories-img" src="{{ latest_a.image }}" alt=""/>
             {% endif %}
@@ -56,7 +56,7 @@
     {% assign latest_p = papers | last %}
     {% if latest_p %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/conference-papers" class="project card bg-conference m-0" style="height: 100%; padding: 15px">
+        <a href="/publication/conference-papers" class="project card bg-conference m-0 p-0" style="height: 100%; padding: 15px">
             {% if latest_p.image %}
             <img class="publication-categories-img" src="{{ latest_p.image }}" alt=""/>
             {% endif %}
@@ -76,7 +76,7 @@
     {% assign latest_t = theses_and_dissertations | last %}
     {% if latest_t %}
     <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="/publication/theses-dissertations" class="project card bg-thesis m-0" style="height: 100%; padding: 15px">
+        <a href="/publication/theses-dissertations" class="project card bg-thesis m-0 p-0" style="height: 100%; padding: 15px">
             {% if latest_t.image %}
             <img class="publication-categories-img" src="{{ latest_t.image }}" alt=""/>
             {% endif %}
