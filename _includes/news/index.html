@@ -33,7 +33,7 @@
 
 
     {% assign news_image = p.image %}
-    
+
     {% if news_type == "Project" %}
       {% assign news_info = p.location %}
     {% elsif news_type == "Publication" %}
@@ -41,8 +41,6 @@
     {% else %}
       {% assign news_info = "" %}
     {%endif%}
-
-    {% if news_type == "Project" %}
 
     {% assign news_name = p.name %}
     {% assign news_id = p.name%}
