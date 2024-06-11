@@ -5,14 +5,30 @@
 {%- endif -%}
 
 
-<div class="row px-3">
-    <div class="col-6 col-md-3 mt-1 mb-3 mx-0 wow animated fadeIn" data-wow-delay=".15s">
-        <a href="{{ book_url }}" class="book-link" {%- if book.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
-            {%- if book_img -%}
-            <img class="book-img" src="{{ book_img }}" alt="{{ book_title }}" />
-            {% else %}
-            <img class="book-img" src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg" alt="default"/>
-            {%- endif -%}
-        </a>
-    </div>
+<!--<div class="row px-3">-->
+<!--    <div class="col-6 col-md-3 mt-1 mb-3 mx-0 wow animated fadeIn" data-wow-delay=".15s">-->
+<!--        <a href="{{ book_url }}" class="book-link" {%- if book.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>-->
+<!--            {%- if book_img -%}-->
+<!--            <img class="book-img" src="{{ book_img }}" alt="{{ book_title }}" />-->
+<!--            {% else %}-->
+<!--            <img class="book-img" src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg" alt="default"/>-->
+<!--            {%- endif -%}-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="col-6 col-md-3 mb-4">
+    <a href="{{ book_url }}" {%- if book.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
+        {%- if book_img -%}
+        <div class="book-cover">
+            <img src="{{ book_img }}" alt="{{ book_title }}">
+        </div>
+        {% else %}
+        <div class="book-cover">
+            <img src="https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/AAA-logo-black.jpg" alt="default"/>
+        </div>
+        {%- endif -%}
+    </a>
 </div>
+

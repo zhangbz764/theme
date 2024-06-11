@@ -1,26 +1,25 @@
-.book-link {
-  display: block;
+.book-cover {
   position: relative;
-  width: 100%;
-  padding-top: calc(297 / 210 * 100%); /* A4 纸比例 */
   overflow: hidden;
-  transition: transform 400ms, box-shadow 400ms;
-  text-decoration: none !important;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.book-link:hover {
-  transform: translateY(-8px);
-  box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+.book-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  transform: translateY(0);
 }
 
-.book-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: contain; /* 保证图片完整显示 */
-  background-color: transparent; /* 模拟留白效果 */
+.book-cover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.book-cover img {
+  border-radius: 10px;
 }
