@@ -8,7 +8,7 @@
 
 
 <div class="wow animated fadeIn col-6 col-sm-4 col-md-3 p-2" data-wow-delay=".15s">
-    <a href="{{ book_url }}" class="project card" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
+    <a href="{{ book_url }}" class="project card" {%- if publication.external_url and site.open_new_tab -%} target="_blank" {%- endif -%}>
         {%- if book_img -%}
         <img class="card-img-top m-0" src="{{ book_img }}" alt="{{ book_title }}" style="border-radius: 15px" />
         {% else %}

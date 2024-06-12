@@ -1,7 +1,6 @@
 <div class="card-columns m-3 mt-5">
   {% for project in site.projects reversed %}
     {%- if project.navs contains "template" -%}
-    {%- elsif project.remote_project -%}
 
     {%- else -%}
       {%- assign project_name  = project.name -%}
