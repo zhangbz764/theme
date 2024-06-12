@@ -1,5 +1,5 @@
-{% assign theses = site.publications | where: "pub_type", "Master Thesis" %}
-{% assign dissertations = site.publications | where: "pub_type", "Doctoral Dissertation" %}
+{% assign theses = site.publications | where: "pub_type", "Master's Thesis" %}
+{% assign dissertations = site.publications | where: "pub_type", "PhD Dissertation" %}
 {% assign theses_and_dissertations = theses | concat: dissertations %}
 
 <h2 class="pt-3 text-center mt-5 mb-3">Theses & Dissertations</h2>

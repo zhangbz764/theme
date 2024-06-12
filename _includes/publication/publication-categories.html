@@ -5,8 +5,8 @@
 {% assign articles = site.publications | where:"pub_type", "Journal Article" %}
 {% assign papers = site.publications | where:"pub_type", "Conference Paper" %}
 
-{% assign theses = site.publications | where: "pub_type", "Master Thesis" %}
-{% assign dissertations = site.publications | where: "pub_type", "Doctoral Dissertation" %}
+{% assign theses = site.publications | where: "pub_type", "Master's Thesis" %}
+{% assign dissertations = site.publications | where: "pub_type", "PhD Dissertation" %}
 {% assign theses_and_dissertations = theses | concat: dissertations %}
 
 

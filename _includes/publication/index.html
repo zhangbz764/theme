@@ -6,11 +6,15 @@
 
 {% assign count = 0 %}
 {% for publication in site.publications reversed %}
-    {% if count < 16 %}
+    {% if publication.navs contains "template" %}
+    {% else %}
+        {% if count < 16 %}
         {% include publication/publication-card.html %}
         {% assign count = count | plus: 1 %}
-    {% else %}
+        {% else %}
         {% break %}
+        {% endif %}
     {% endif %}
+
 {% endfor %}
 
