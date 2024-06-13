@@ -12,9 +12,11 @@
 <br>
 <h4 class='text-center mt-6 mb-2'>Recent News</h4>
 <div class="card-columns mt-3">
+    {% assign count = 0 %}
     {% for p in news%}
     {% if p.navs contains "template"%}
     {% else %}
+    {% if count < 16 %}
     {%- if p.external_url -%}
       {%- assign news_url = p.external_url -%}
       {%- assign external    = true -%}
@@ -48,6 +50,10 @@
     {% assign news_year = p.date | date: "%Y" %}
 
     {% include news/news-card.html %}
+    {% assign count = count | plus: 1 %}
+    {% else %}
+    {% break %}
+    {% endif %}
     {% endif %}
     {% endfor %}
 </div>
