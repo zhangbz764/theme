@@ -8,7 +8,7 @@
 {% for publication in site.publications reversed %}
     {% if publication.navs contains "template" %}
     {% else %}
-        {% if count < 16 %}
+        {% if count < 12 %}
         {% include publication/publication-card.html %}
         {% assign count = count | plus: 1 %}
         {% else %}

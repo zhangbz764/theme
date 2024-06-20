@@ -45,8 +45,8 @@ function getTheme() {
 
 function setTheme(value) {
   document.documentElement.setAttribute(THEME_ATTR, value);
-  console.log(value)
-  console.log(document.getElementById("seu-logo"))
+  // console.log(value)
+  // console.log(document.getElementById("seu-logo"))
   
   if( value === themes.LIGHT) {
     if (document.getElementById("seu-logo") !== null) {
