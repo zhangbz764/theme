@@ -44,29 +44,59 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const projects = document.querySelectorAll('.project-card');
+    const container = document.getElementById('projects-container');
     const loadMoreBtn = document.getElementById('load-more-btn');
     const itemsPerPage = 6; // 每次加载的项目数量
-    let currentIndex = 0;
+    let currentIndex = 0;   // 当前加载到的索引
+    let projects = [];      // 用于存放加载的项目数据
 
-    function showNextProjects() {
+    // 从服务器加载项目数据
+    async function fetchProjects() {
+      try {
+        const response = await fetch('/assets/projects.json'); // 确保路径正确
+        projects = await response.json();
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+        loadMoreBtn.style.display = 'none'; // 隐藏按钮
+      }
+    }
+
+    // 渲染项目卡片
+    function renderProjects() {
       for (let i = currentIndex; i < currentIndex + itemsPerPage; i++) {
         if (projects[i]) {
-          projects[i].style.display = 'block';
+          const project = projects[i];
+          const projectHTML = `
+            <div class="card project-card">
+              <img src="${project.image}" class="card-img-top" alt="${project.name}">
+              <div class="card-body">
+                <h5 class="card-title">${project.name}</h5>
+                <p class="card-text">${project.description}</p>
+                <a href="${project.url}" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          `;
+          container.insertAdjacentHTML('beforeend', projectHTML);
         }
       }
       currentIndex += itemsPerPage;
 
-      // 如果所有项目都加载完，隐藏按钮
+      // 如果没有更多项目，隐藏按钮
       if (currentIndex >= projects.length) {
         loadMoreBtn.style.display = 'none';
       }
     }
 
-    // 初始加载项目
-    showNextProjects();
+    // 初次加载项目
+    async function init() {
+      await fetchProjects(); // 加载数据
+      renderProjects();      // 渲染初始内容
+    }
 
-    // 按钮点击事件
-    loadMoreBtn.addEventListener('click', showNextProjects);
+    // 点击按钮加载更多
+    loadMoreBtn.addEventListener('click', renderProjects);
+
+    // 初始化
+    init();
   });
 </script>
