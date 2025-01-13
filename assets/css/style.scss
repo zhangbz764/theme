@@ -9,6 +9,17 @@
 .border-primary { border-color: $primary!important; }
 .bg-primary { background-color: $primary!important; }
 
+.bg-book { background-color: $book!important; }
+.bg-journal { background-color: $journal!important; }
+.bg-conference { background-color: $conference!important; }
+.bg-thesis { background-color: $thesis!important; }
+
+.border-book { border-color: $book!important; }
+.border-journal { border-color: $journal!important; }
+.border-conference { border-color: $conference!important; }
+.border-thesis { border-color: $thesis!important; }
+
+
 a {color:$primary;}
 
 .btn-outline-primary { color: #fff; background-color: $primary; border-color: $primary; }
@@ -16,6 +27,11 @@ a {color:$primary;}
 .btn-outline-primary:hover { color: #fff; background-color: lighten($primary, 10%); border-color: lighten($primary, 10%); }
 
 .badge-primary { color: #fff; background-color: $primary; }
+.badge-book { color: #fff; background-color: $book; }
+.badge-journal { color: #fff; background-color: $journal; }
+.badge-conference { color: #fff; background-color: $conference; }
+.badge-thesis { color: #fff; background-color: $thesis; }
+
 a.bg-primary:hover {
     background-color: darken($primary, 10%)!important;
 }
@@ -64,14 +80,30 @@ a.bg-primary:hover {
     color: #a3a7aa!important;
 }
 
+.publication-year-heading {
+  font-style: italic;
+  color: gray;
+}
+
 .publication-card-img {
     width: 100%;
-    height: 15.5rem;
+    height: 12rem;
+    max-height: none;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     opacity: 0.2;  
     object-fit: cover; 
     overflow:hidden;
+}
+
+.publication-categories-img {
+  width: 100%;
+  height: 8rem;
+  max-height: none;
+  border-radius: 10px;
+  opacity: 0.2;
+  object-fit: cover;
+  overflow:hidden;
 }
 
 .people-card-img {
@@ -80,6 +112,25 @@ a.bg-primary:hover {
     object-fit: cover; 
     overflow:hidden;
 }
+
+//.book-card {
+//  width: auto;
+//  position: relative;
+//  padding-top: calc(297 / 210 * 100%); /* A4 纸比例 */
+//  overflow: hidden;
+//  background-color: transparent; /* 取消背景效果 */
+//}
+//
+//.book-card-img {
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  height: auto;
+//  width: 100%;
+//  max-height: 100%;
+//  transform: translate(-50%, -50%);
+//  object-fit: contain; /* 让图片在容器中完整显示 */
+//}
 
 .card-img-overlay{
     display: block;/* or inline-block */

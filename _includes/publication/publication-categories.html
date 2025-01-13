@@ -1,0 +1,94 @@
+{% assign books = site.publications | where: "pub_type", "Book" %}
+{% assign chapters = site.publications | where: "pub_type", "Chapter" %}
+{% assign books_and_chapters = books | concat: chapters %}
+
+{% assign articles = site.publications | where:"pub_type", "Journal Article" %}
+{% assign papers = site.publications | where:"pub_type", "Conference Paper" %}
+
+{% assign theses = site.publications | where: "pub_type", "Master's Thesis" %}
+{% assign dissertations = site.publications | where: "pub_type", "PhD Dissertation" %}
+{% assign theses_and_dissertations = theses | concat: dissertations %}
+
+
+<div class="row px-3">
+    <!--    Books & Chapters    -->
+    {% assign latest_b = books_and_chapters | last %}
+    {% if latest_b %}
+    <div class="col-6 col-md-3 mt-1 mb-3 mx-0 wow animated fadeIn" data-wow-delay=".15s">
+        <a href="/publication/books-chapters" class="project card bg-book m-0 p-0" style="height: 100%; padding: 15px">
+            {% if latest_b.image %}
+            <img class="publication-categories-img" src="{{ latest_b.image }}" alt=""/>
+            {% endif %}
+            <div class="card-img-overlay p-0 d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                     style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center m-0">Books<br>&<br>Chapters</h4>
+                </div>
+            </div>
+
+        </a>
+    </div>
+    {% else %}
+
+    {% endif %}
+
+    <!--    Journal Articles    -->
+    {% assign latest_a = articles | last %}
+    {% if latest_a %}
+    <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
+        <a href="/publication/journal-articles" class="project card bg-journal m-0 p-0" style="height: 100%; padding: 15px">
+            {% if latest_a.image %}
+            <img class="publication-categories-img" src="{{ latest_a.image }}" alt=""/>
+            {% endif %}
+            <div class="card-img-overlay p-0 d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                     style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center m-0">Journal<br>Articles</h4>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% else %}
+
+    {% endif %}
+
+    <!--    Conference Papers    -->
+    {% assign latest_p = papers | last %}
+    {% if latest_p %}
+    <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
+        <a href="/publication/conference-papers" class="project card bg-conference m-0 p-0" style="height: 100%; padding: 15px">
+            {% if latest_p.image %}
+            <img class="publication-categories-img" src="{{ latest_p.image }}" alt=""/>
+            {% endif %}
+            <div class="card-img-overlay p-0 d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                     style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center m-0">Conference<br>Papers</h4>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% else %}
+
+    {% endif %}
+
+    <!--    Theses & Dissertations    -->
+    {% assign latest_t = theses_and_dissertations | last %}
+    {% if latest_t %}
+    <div class="col-6 col-md-3 mt-1 mb-3 wow animated fadeIn" data-wow-delay=".15s">
+        <a href="/publication/theses-dissertations" class="project card bg-thesis m-0 p-0" style="height: 100%; padding: 15px">
+            {% if latest_t.image %}
+            <img class="publication-categories-img" src="{{ latest_t.image }}" alt=""/>
+            {% endif %}
+            <div class="card-img-overlay p-0 d-flex justify-content-center align-items-center">
+                <div class="card-body text-white p-0 d-flex justify-content-center align-items-center"
+                     style="height: 100%; width: 100%;">
+                    <h4 class="card-title text-center m-0">Theses<br>&<br>Dissertations</h4>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% else %}
+
+    {% endif %}
+</div>

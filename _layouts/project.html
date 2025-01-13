@@ -9,7 +9,7 @@ layout: page
 {% endif %}
 
 <p class="post-metadata text-muted">
-  {{ page.year }} -  
+  {{ page.date | date: "%Y" }} -
   <b>
   {%- assign words = content | number_of_words -%}
   {%- if words < 360 -%}
@@ -45,10 +45,10 @@ layout: page
   {% endif%}
   <br>
   
-  {% if page.location != empty and page.location_cn != empty %}
-    Location: {{ page.location_cn }} {{ page.location }}
+  {% if page.location %}
+    Location: {{ page.location }}  {{ page.location_cn }}
+    <br>
   {% endif%}
-  <br>
 
   {%- if page.tags != empty -%}
     Tags: 

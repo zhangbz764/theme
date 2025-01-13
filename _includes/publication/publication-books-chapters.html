@@ -1,0 +1,16 @@
+{% assign books = site.publications | where: "pub_type", "Book" %}
+{% assign chapters = site.publications | where: "pub_type", "Chapter" %}
+{% assign books_and_chapters = books | concat: chapters %}
+
+<h2 class="pt-3 text-center mt-5 mb-3">Books & Chapters</h2>
+
+<div class="row px-3">
+  {% assign current_year = nil %}
+
+  {% for publication in books_and_chapters reversed %}
+
+      {% include publication/book-card.html %}
+
+  {% endfor %}
+
+</div>

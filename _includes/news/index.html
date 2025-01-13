@@ -11,11 +11,12 @@
 <br>
 <br>
 <h4 class='text-center mt-6 mb-2'>Recent News</h4>
-<hr width="25%"> 
 <div class="card-columns mt-3">
-    {% for p in news%}
+    {% assign count = 0 %}
+    {% for p in news | limit : 12 %}
     {% if p.navs contains "template"%}
     {% else %}
+    {% if count < 16 %}
     {%- if p.external_url -%}
       {%- assign news_url = p.external_url -%}
       {%- assign external    = true -%}
@@ -26,21 +27,33 @@
 
     {% assign news_type = "News" %}
     {% if p.team %}
-        {%assign news_type = "Project" %}
+        {% assign news_type = "Project" %}
     {% endif %}
     {% if p.authors %}
-        {%assign news_type = "Publication" %}
+        {% assign news_type = "Publication" %}
     {%endif%}
 
 
     {% assign news_image = p.image %}
-    {% assign news_location = p.location%}
+
+    {% if news_type == "Project" %}
+      {% assign news_info = p.location %}
+    {% elsif news_type == "Publication" %}
+      {% assign news_info = p.source %}
+    {% else %}
+      {% assign news_info = "" %}
+    {%endif%}
+
     {% assign news_name = p.name %}
     {% assign news_id = p.name%}
     {% assign news_tag = p.tags %}
-    {% assign news_year = p.year %}
+    {% assign news_year = p.date | date: "%Y" %}
 
     {% include news/news-card.html %}
+    {% assign count = count | plus: 1 %}
+    {% else %}
+    {% break %}
+    {% endif %}
     {% endif %}
     {% endfor %}
 </div>

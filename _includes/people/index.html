@@ -2,14 +2,15 @@
   {% assign peoples = site.people | where:"position", pos %}
 
   {% if peoples != empty %}
-  <h2 class="pt-3 text-center my-5">{{pos}}</h2>
-  <div class="card-group mt-2">
+  <h2 class="pt-3 text-center mt-5 mb-3">{{pos}}</h2>
+  <div class="row px-3">
     {% for people in peoples %}
       {% if people.navs contains "template" %}
       {% else %}
         {%- assign people_id    = people.name | slugify -%}
         {%- assign people_img   = people.image -%}
         {%- assign people_name  = people.name -%}
+        {%- assign people_name_cn  = people.name_cn -%}
         {%- assign people_tags = people.tags -%}
         {%- assign people_url = people.url | relative_url -%}
 

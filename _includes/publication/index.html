@@ -1,11 +1,20 @@
-<div class="card-group mt-2">
 
-  {% for publication in site.publications %}
-      
-    {%- if publication.navs contains "template" -%}
-    {%- else -%}
-      {% include publication/publication-card.html %}
-    {%- endif -%}
-  {% endfor %}
-  
-</div>
+{% include publication/publication-categories.html %}
+
+
+<h2 class="pt-3 text-center mt-5 mb-3">Latest Publications</h2>
+
+{% assign count = 0 %}
+{% for publication in site.publications reversed %}
+    {% if publication.navs contains "template" %}
+    {% else %}
+        {% if count < 12 %}
+        {% include publication/publication-card.html %}
+        {% assign count = count | plus: 1 %}
+        {% else %}
+        {% break %}
+        {% endif %}
+    {% endif %}
+
+{% endfor %}
+

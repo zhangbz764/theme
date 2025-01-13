@@ -1,0 +1,22 @@
+{% assign articles = site.publications | where:"pub_type", "Journal Article" %}
+
+<h2 class="pt-3 text-center mt-5 mb-3">Journal Articles</h2>
+
+<div class="card-group mt-2">
+  {% assign current_year = nil %}
+
+  {% for publication in articles reversed %}
+
+      {%- assign publication_year = publication.date | date: "%Y" -%}
+      {% if current_year != publication_year %}
+      {% assign current_year = publication_year %}
+      <div class="col-12">
+        <h2 class="publication-year-heading ma-0 pt-3 pb-0">{{ current_year }}</h2>
+      </div>
+
+    {%- endif -%}
+
+    {% include publication/publication-card.html %}
+  {% endfor %}
+
+</div>
