@@ -1,5 +1,6 @@
-<div class="card-columns m-3 mt-5">
+<div class="card-columns m-3 mt-5" id="projects-container">
   {% for project in site.projects reversed %}
+  <div class="project-card" style="display: none;">
     {%- if project.navs contains "template" -%}
 
     {%- else -%}
@@ -32,7 +33,40 @@
 
       {% include projects/project-card.html %}
     {%- endif -%}
-
+  </div>
   {% endfor %}
 
 </div>
+
+<div class="text-center">
+  <button id="load-more-btn" class="btn btn-primary mt-3">More</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const projects = document.querySelectorAll('.project-card');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const itemsPerPage = 6; // 每次加载的项目数量
+    let currentIndex = 0;
+
+    function showNextProjects() {
+      for (let i = currentIndex; i < currentIndex + itemsPerPage; i++) {
+        if (projects[i]) {
+          projects[i].style.display = 'block';
+        }
+      }
+      currentIndex += itemsPerPage;
+
+      // 如果所有项目都加载完，隐藏按钮
+      if (currentIndex >= projects.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    }
+
+    // 初始加载项目
+    showNextProjects();
+
+    // 按钮点击事件
+    loadMoreBtn.addEventListener('click', showNextProjects);
+  });
+</script>
